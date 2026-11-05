@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101318">
+  <title>BOOM | Gestión Integral</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="dashboard">
+        <span class="brand-mark">B<span>✳</span></span>
+        <span class="brand-copy"><strong>BOOM</strong><small>GESTIÓN INTEGRAL</small></span>
+      </a>
+      <div class="workspace"><span class="status-dot"></span><span>Panel de operaciones</span><span class="chevron">⌄</span></div>
+      <nav class="navigation" aria-label="Navegación principal">
+        <p class="nav-label">GENERAL</p>
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">▦</span>Panel general</button>
+        <button class="nav-link" data-page="agenda"><span class="nav-icon">▣</span>Agenda y eventos</button>
+        <p class="nav-label">COMERCIAL</p>
+        <button class="nav-link" data-page="clientes"><span class="nav-icon">♧</span>Clientes</button>
+        <button class="nav-link" data-page="presupuestos"><span class="nav-icon">▤</span>Presupuestos</button>
+        <button class="nav-link" data-page="ventas"><span class="nav-icon">↗</span>Ventas y alquileres</button>
+        <button class="nav-link" data-page="contratos"><span class="nav-icon">▧</span>Contratos</button>
+        <p class="nav-label">OPERACIONES</p>
+        <button class="nav-link" data-page="inventario"><span class="nav-icon">▦</span>Inventario y equipos</button>
+        <button class="nav-link" data-page="deposito"><span class="nav-icon">▣</span>Depósito y movimientos</button>
+        <button class="nav-link" data-page="personal"><span class="nav-icon">♙</span>Personal técnico</button>
+        <button class="nav-link" data-page="logistica"><span class="nav-icon">⇄</span>Logística y vehículos</button>
+        <button class="nav-link" data-page="mantenimiento"><span class="nav-icon">⚙</span>Mantenimiento</button>
+        <p class="nav-label">ADMINISTRACIÓN</p>
+        <button class="nav-link" data-page="finanzas"><span class="nav-icon">$</span>Finanzas y caja</button>
+        <button class="nav-link" data-page="proveedores"><span class="nav-icon">▱</span>Proveedores y compras</button>
+        <button class="nav-link" data-page="informes"><span class="nav-icon">▥</span>Informes y estadísticas</button>
+      </nav>
+      <div class="sidebar-bottom"><button class="nav-link" data-page="configuracion"><span class="nav-icon">⚙</span>Configuración</button><div class="user-mini"><div class="avatar">BO</div><div><strong>Administración BOOM</strong><small>Cuenta principal</small></div><span class="more">•••</span></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">☰</button><div class="breadcrumb">BOOM <span>/</span> <strong id="crumb">Panel general</strong></div><div class="top-actions"><span class="today" id="today"></span><button class="icon-button" title="Notificaciones">♧<i></i></button><div class="avatar top-avatar">BO</div></div></header>
+      <div class="content" id="content">
+        <section class="page-heading"><div><div class="eyebrow">CENTRO DE CONTROL</div><h1>Buen día. <span>BOOM.</span></h1><p>Todo lo que pasa en tu operación, en un solo lugar.</p></div><button class="primary-button" data-action="new-event"><span>＋</span> Nuevo evento</button></section>
+        <section class="metric-grid">
+          <article class="metric-card"><div class="metric-top"><span>Eventos próximos</span><span class="metric-icon purple">▣</span></div><strong id="metricEvents">08</strong><small><b class="positive">+2</b> respecto a la semana pasada</small><div class="metric-line purple-line"><i style="width:68%"></i></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Equipos disponibles</span><span class="metric-icon green">◈</span></div><strong id="metricAvailable">86%</strong><small>Del inventario total registrado</small><div class="metric-line green-line"><i style="width:86%"></i></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Presupuestos pendientes</span><span class="metric-icon orange">▤</span></div><strong id="metricQuotes">12</strong><small><b class="warning">4 requieren seguimiento</b></small><div class="metric-line orange-line"><i style="width:44%"></i></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Ingresos del mes</span><span class="metric-icon blue">$</span></div><strong>$ 4,8 M</strong><small><b class="positive">+12,4%</b> frente al mes anterior</small><div class="metric-line blue-line"><i style="width:74%"></i></div></article>
+        </section>
+        <section class="dashboard-grid">
+          <article class="panel schedule-panel"><div class="panel-heading"><div><div class="eyebrow">OPERACIÓN</div><h2>Próximos eventos</h2></div><button class="text-button" data-page="agenda">Ver agenda <span>→</span></button></div><div class="event-list" id="upcomingEvents"></div></article>
+          <article class="panel activity-panel"><div class="panel-heading"><div><div class="eyebrow">RESUMEN</div><h2>Estado operativo</h2></div><span class="live-pill"><i></i> En seguimiento</span></div><div class="operation-stats"><div class="operation-row"><span class="operation-symbol green">✓</span><div><strong>Equipos operativos</strong><small>Listos para asignación</small></div><b>248</b></div><div class="operation-row"><span class="operation-symbol orange">↗</span><div><strong>Equipos alquilados</strong><small>En eventos activos</small></div><b>37</b></div><div class="operation-row"><span class="operation-symbol red">⚒</span><div><strong>En mantenimiento</strong><small>Requieren revisión</small></div><b>09</b></div><div class="operation-row"><span class="operation-symbol blue">⇄</span><div><strong>Movimientos de hoy</strong><small>Entregas y devoluciones</small></div><b>06</b></div></div><div class="panel-footnote">Actualizá los movimientos desde el módulo de depósito.</div></article>
+        </section>
+        <section class="bottom-grid">
+          <article class="panel"><div class="panel-heading"><div><div class="eyebrow">SEGUIMIENTO COMERCIAL</div><h2>Actividad reciente</h2></div><button class="text-button" data-page="presupuestos">Ver todo →</button></div><div class="table-wrap"><table><thead><tr><th>CLIENTE</th><th>OPERACIÓN</th><th>FECHA</th><th>ESTADO</th></tr></thead><tbody id="recentActivity"><tr><td><strong>Productora Norte</strong></td><td>Presupuesto #BO-024</td><td>Hoy, 10:42</td><td><span class="tag pending">Pendiente</span></td></tr><tr><td><strong>Teatro Central</strong></td><td>Alquiler #BO-023</td><td>Ayer</td><td><span class="tag approved">Confirmado</span></td></tr><tr><td><strong>Festival Ciudad</strong></td><td>Presupuesto #BO-022</td><td>04 nov</td><td><span class="tag review">En revisión</span></td></tr></tbody></table></div></article>
+          <article class="panel quick-panel"><div class="panel-heading"><div><div class="eyebrow">ATAJOS</div><h2>Accesos rápidos</h2></div></div><div class="quick-actions"><button data-action="new-quote"><span class="quick-icon purple">＋</span><span><strong>Crear presupuesto</strong><small>Preparar una cotización</small></span><b>→</b></button><button data-action="new-client"><span class="quick-icon green">♧</span><span><strong>Agregar cliente</strong><small>Registrar nuevo contacto</small></span><b>→</b></button><button data-page="inventario"><span class="quick-icon orange">◈</span><span><strong>Consultar inventario</strong><small>Ver equipos y disponibilidad</small></span><b>→</b></button></div></article>
+        </section>
+        <footer class="footer"><span>BOOM Gestión Integral <b>·</b> Sistema de administración</span><span>Versión inicial 1.0</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
